@@ -1,0 +1,40 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull request to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Print "Hello, World! from Build Stage"
+        run: echo "Hello, World! from Build Stage"
+
+  test:
+    runs-on: ubuntu-latest  # Use Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Print "Hello, World! from Test Stage"
+        run: echo "Hello, World! from Test Stage"
+
+  deploy:
+    runs-on: ubuntu-latest  # Use Ubuntu runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Print "Hello, World! from Deploy Stage"
+        run: echo "Hello, World! from Deploy Stage"
